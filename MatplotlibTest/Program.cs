@@ -25,11 +25,12 @@ namespace MatplotlibTest
 
             double[] X = new double[] { -10, -8.5, -2, 1, 6, 9, 10, 14, 15, 19 };
             double[] Y = new double[] { -4, 6.5, -2, 3, -8, -5, 11, 4, -5, 10 };
+
             string tempfolder = System.IO.Path.GetTempPath();
+            tempfolder = "C:\\Users\\King\\Documents\\BP\\";
 
-
-            string pythonExe = "C:\\Users\\King\\AppData\\Local\\Programs\\Python\\Python37\\python.py";
-            string plotPath = "C:\\Users\\King\\source\\repos\\MatplotlibTest\\MatplotlibTest\\MatplotlibCS\\matplotlib_cs.py";
+            string pythonExe = "C:\\Users\\King\\AppData\\Local\\Programs\\Python\\Python37\\python.exe";
+            string plotPath = "C:\\Users\\King\\source\\repos\\MatplotlibCS\\MatplotlibCS\\Python\\matplotlib_cs.py";
             var matplotLibEngine = new MatplotlibCS.MatplotlibCS(pythonExe, plotPath);
 
             var figure = new Figure(1, 1)
@@ -78,12 +79,9 @@ namespace MatplotlibTest
                 }
             };
 
+            //act
             var t = matplotLibEngine.BuildFigure(figure);
-
             t.Wait();
-
-
-            Console.ReadLine();
         }
     }
 }
